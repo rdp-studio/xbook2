@@ -1,6 +1,6 @@
 
 X_INCDIRS	+= infones/core
-X_LIBS		+= xlibc-0.0.1.a sgi-0.0.1.a
+X_LIBS		+= libxc-0.0.1.a libsgi-0.0.1.a
 NAME		:= infones
 SRC			+= infoNES_System_Book.c
 

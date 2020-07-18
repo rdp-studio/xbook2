@@ -48,8 +48,8 @@ C_FLAGS		= -c -fno-builtin -Wall -Wunused -fno-stack-protector  -m32 \
 
 OBJS =  main.o \
 
-LIB_FILE = 	$(DIR_PTHREAD)/pthread-0.0.1.a \
-			$(DIR_XLIBC)/xlibc-0.0.1.a \
+LIB_FILE = 	$(DIR_PTHREAD)/libpthread-0.0.1.a \
+			$(DIR_XLIBC)/libxc-0.0.1.a \
 
 
 LDFLAGS		= -no-pie -m elf_i386 -e _start -Ttext 0x00001000

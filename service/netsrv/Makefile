@@ -119,8 +119,8 @@ MAIN_OBJS 	= 	main.o \
 
 OBJS =  $(MAIN_OBJS) $(LWIP_OBJS) $(DRIVERS_OBJS) $(CORE_OBJS)
 
-LIB_FILE 	:=  $(DIR_PTHREAD)/pthread-0.0.1.a \
-				$(DIR_XLIBC)/xlibc-0.0.1.a \
+LIB_FILE 	:=  $(DIR_PTHREAD)/libpthread-0.0.1.a \
+				$(DIR_XLIBC)/libxc-0.0.1.a \
 
 LDFLAGS		= -no-pie -m elf_i386 -e _start -Ttext 0x00001000
 

@@ -54,7 +54,7 @@ KERNEL_ELF 	= $(KERNSRC)/kernel.elf
 .PHONY: all kernel build debuild rom qemu qemudbg lib srv usr
 
 # 默认所有动作
-all : kernel 
+all : kernel build
 	$(DD) if=$(BOOT_BIN) of=$(FLOPPYA_IMG) bs=512 count=1 conv=notrunc
 	$(DD) if=$(LOADER_BIN) of=$(FLOPPYA_IMG) bs=512 seek=$(LOADER_OFF) count=$(LOADER_CNTS) conv=notrunc
 	$(DD) if=$(SETUP_BIN) of=$(FLOPPYA_IMG) bs=512 seek=$(SETUP_OFF) count=$(SETUP_CNTS) conv=notrunc
@@ -68,7 +68,7 @@ run: qemu
 kernel:
 	@$(MAKE) -s -C  ./src
 
-clean:
+clean: debuild
 	@$(MAKE) -s -C ./src clean
 
 # 构建环境。镜像>工具>环境>rom

@@ -1,4 +1,4 @@
-X_LIBS		+= xlibc-0.0.1.a sgi-0.0.1.a pthread-0.0.1.a
+X_LIBS		+= libxc-0.0.1.a libsgi-0.0.1.a libpthread-0.0.1.a
 
 NAME		:= tests
 SRC			+= main.c cond_sync.c

@@ -1,16 +1,10 @@
-# 要执行的服务的路径
-XLIBC 		= ./xlibc
-PTHREAD 	= ./pthread
-SGI 		= ./sgi
+sinclude ../scripts/env.mk
 
-.PHONY: all clean
+X_CFLAGS	:= -fno-builtin -Wall -Wunused -fno-PIE -m32 -fno-stack-protector -std=gnu99
 
-all: 
-	$(MAKE) -C $(XLIBC)
-	$(MAKE) -C $(PTHREAD)
-	$(MAKE) -C $(SGI)
+AS			:= nasm
+export AS
 
-clean: 
-	$(MAKE) -C $(XLIBC) clean
-	$(MAKE) -C $(PTHREAD) clean
-	$(MAKE) -C $(SGI) clean
+MODULE		:= xlibc
+MODULE		+= pthread
+MODULE		+= sgi
